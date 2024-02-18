@@ -5,7 +5,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
     todos: [{
         id: 1,
-        title: "First Todo",
+        title: "sample todo 1",
         completed: false
     }]
 }
