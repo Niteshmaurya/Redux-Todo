@@ -19,10 +19,10 @@ const todoSlice = createSlice({
             state.todos.unshift(action.payload)
         },
         remTodo: (state, action) => {
-            return state.todos.filter(todo => todo.id !== action.payload)
+            state.todos = state.todos.filter(todo => todo.id !== action.payload)
         },
         updateTodo: (state, action) => {
-            return state.todos.map(todo => {
+            state.todos = state.todos.map(todo => {
                 if (todo.id === action.payload.id) {
                     return { ...todo, title: action.payload.title }
                 }
@@ -30,7 +30,7 @@ const todoSlice = createSlice({
             })
         },
         toggleCompleted: (state, action) => {
-            return state.todos.map(todo => {
+            state.todos = state.todos.map(todo => {
                 if (todo.id === action.payload) {
                     return { ...todo, completed: !todo.completed }
                 }
@@ -42,7 +42,7 @@ const todoSlice = createSlice({
 //todoSlice is a slice that contains the name of the slice, the initial state, and a set of reducers. The reducers are functions that take the current state and an action, and return a new state. In this case, we have two reducers: addTodo and toggleComplete.
 //state is the current state of the slice, and action is an object that contains a type and a payload. The type is a string that describes the action, and the payload is the data that is used to update the state.
 
-export const { addTodo, remTodo, updateTodo,toggleCompleted } = todoSlice.actions
+export const { addTodo, remTodo, updateTodo, toggleCompleted } = todoSlice.actions
 //we need to export the action creators so that we can use them individually to dispatch actions in our components.
 
 export default todoSlice.reducer

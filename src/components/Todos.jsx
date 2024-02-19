@@ -7,7 +7,7 @@ import { remTodo, updateTodo, toggleCompleted } from "../features/Todo/todoSlice
 function Todos({ todo }) {
     console.log(todo)
     const [todoMsg, setTodoMsg] = useState(todo.title);
-    const todos = useSelector(state => state.todos)
+    // const todos = useSelector(state => state.todos)
     const dispatch = useDispatch();//
     // Get dispatch function from useDispatch hook
 
